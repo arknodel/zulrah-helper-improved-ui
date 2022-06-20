@@ -12,6 +12,11 @@ new Vue({
     el: '#zulrah-helper',
     data: {
         PossibleRotations: PossibleRotations,
+        phaseGroups: [
+            [1, 2, 3, 4],
+            [5, 6, 7, 8],
+            [9, 10, 11, 12]
+        ],
         displaySettings: false,
         rotation: PossibleRotations.NotSet,
         meleePhase2: false,
@@ -23,6 +28,29 @@ new Vue({
         selectRotation: function(rotation) {
             this.rotation = rotation;
             this.meleePhase2 = (rotation == PossibleRotations.MeleeStart || rotation == PossibleRotations.MeleeStartPhase4South || rotation == PossibleRotations.MeleeStartPhase4East);
+        },
+        getImage: function(phase, rotation) {
+            if (phase == 1) {
+                return 'images/start-' + this.style + '.png';
+            } else {
+                const imageIndex = phase - 1;
+                switch (rotation) {
+                    case PossibleRotations.MeleeStart:
+                        if (phase <= 3) {
+                            return 'images/one/' + imageIndex.toString() + '-' + this.style + '.png';
+                        }
+                        break;
+                    case PossibleRotations.MeleeStartPhase4South:
+                        return 'images/one/' + imageIndex.toString() + '-' + this.style + '.png';
+                    case PossibleRotations.MeleeStartPhase4East:
+                        return 'images/two/' + imageIndex.toString() + '-' + this.style + '.png';
+                    case PossibleRotations.RangeStart:
+                        return 'images/three/' + imageIndex.toString() + '-' + this.style + '.png';
+                    case PossibleRotations.MageStart:
+                        return 'images/four/' + imageIndex.toString() + '-' + this.style + '.png';
+                }
+                return 'images/placeholder-' + this.style + '.png';
+            }
         },
         toggleTheme: function () {
             if (this.theme == "light") {

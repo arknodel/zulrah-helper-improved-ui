@@ -97,24 +97,10 @@
     opacity: .7;
 }
 
-.previous-rotations .phase-image {
+.selected-rotation {
     opacity: .7;
     border-radius: 6px;
     box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-}
-
-.previous-rotation {
-    opacity: .7;
-    border-radius: 6px;
-    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-}
-
-.previous-rotations .column {
-    padding: 10px;
-}
-
-.previous-rotations div {
-
 }
 
 #settings {
