@@ -86,72 +86,121 @@
                     </div>
                 </div>
 
-                <div class="columns is-mobile is-multiline previous-rotations" v-if="rotation != 0">
-                    <div class="column is-3 previous-rotation" id="previous-rotation-start">
-                        <img :src="'images/start-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="Starting phase" />
-                    </div>
-                    <div class="column is-3 previous-rotation" id="previous-rotation-1" v-if="rotation == 1 || rotation == 1.1 || rotation == 1.2">
-                        <img :src="'images/one/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 1 + 2 option" />
-                    </div>
-                    <div class="column is-3 previous-rotation" id="previous-rotation-2" v-if="rotation == 2">
-                        <img :src="'images/three/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="Rotation 3 option" />
-                    </div>
-                    <div class="column is-3 previous-rotation" id="previous-rotation-3" v-if="rotation == 3">
-                        <img :src="'images/four/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 4 option" />
-                    </div>
-                    <div class="column is-3 previous-rotation" v-if="rotation == 1.1">
-                        <img :src="'images/one/2-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
-                    </div>
-                    <div class="column is-3 previous-rotation" v-if="rotation == 1.1">
-                        <img :src="'images/one/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
-                    </div>
-                    <div class="column is-3 previous-rotation" v-if="rotation == 1.2">
-                        <img :src="'images/two/2-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
-                    </div>
-                    <div class="column is-3 previous-rotation" v-if="rotation == 1.2">
-                        <img :src="'images/two/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
-                    </div>
-                </div>
 
-                <div class="columns is-mobile is-multiline rotations" id="select-rotations-start" v-if="rotation == 0">
-                    <div class="column is-4 has-text-centered">
-                        <h5 class="title is-5 has-text-left">PHASE 1</h5>
-                        <img :src="'images/start-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="Starting phase" />
-                    </div>
-                </div>
-
-                <div class="columns is-mobile is-multiline rotations" id="select-rotations-1" v-if="rotation == 0">
-                    <h5 class="column is-12 title is-5">PHASE 2 OPTIONS</h5>
-                    <div class="column is-4 image" id="select-rotation-1" @click="selectRotation(1)">
-                        <img :src="'images/one/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 1 + 2 option" />
-                    </div>
-                    <div class="column is-4 image" id="select-rotation-2" @click="selectRotation(2)">
-                        <img :src="'images/three/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 3 option" />
-                    </div>
-                    <div class="column is-4 image" id="select-rotation-3" @click="selectRotation(3)">
-                        <img :src="'images/four/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 4 option" />
-                    </div>
-                </div>
-
-                <div class="sub-rotation" id="sub-rotation-1" v-if="rotation == 1">
+                
+                <div class="columns is-mobile is-multiline rotations">
                     <div class="columns is-mobile is-multiline rotations">
-                        <h5 class="column is-12 title is-5">PHASE 3</h5>
-                        <div class="column is-4">
-                            <img :src="'images/one/2-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="Starting phase" />
+                        <h5 class="column is-12 title is-5">PHASE 2 OPTIONS</h5>
+                        <div class="column is-4 previous-rotation" id="select-rotation-1">
+                            <img :src="'images/one/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="Rotation 1 + 2 option" />
+                        </div>
+                        <div class="column is-4" id="select-rotation-2" @click="selectRotation(PossibleRotations.RangeStart)">
+                            <img :src="'images/three/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 3 option" />
+                        </div>
+                        <div class="column is-4" id="select-rotation-3" @click="selectRotation(PossibleRotations.MageStart)">
+                            <img :src="'images/four/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 4 option" />
                         </div>
                     </div>
+                </div>
+
+                <br/>
+
+                <div class="columns is-mobile is-multiline rotations">
                     <div class="columns is-mobile is-multiline rotations">
-                        <h5 class="column is-12 title is-5">PHASE 4 OPTIONS</h5>
-                        <div class="column is-4" id="select-rotation-1-path-1" @click="selectRotation(1.1)">
+                        <h5 class="column is-12 title is-5">PHASE 4 OPTIONS (Melee is Phase 2)</h5>
+                        <div class="column is-4" id="select-rotation-1-path-1" @click="selectRotation(PossibleRotations.MeleeStartPhase4South)">
                             <img :src="'images/one/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
                         </div>
-                        <div class="column is-4" id="select-rotation-1-path-2" @click="selectRotation(1.2)">
+                        <div class="column is-4" id="select-rotation-1-path-2" @click="selectRotation(PossibleRotations.MeleeStartPhase4East)">
                             <img :src="'images/two/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
                         </div>
                     </div>
                 </div>
 
-                <div class="sub-rotation" id="sub-rotation-1-part-1" v-if="rotation == 1.1">
+                <br />
+                <br />
+
+                <div class="columns is-mobile is-multiline">
+                    <h5 class="column is-12 title is-5">PHASES 1-4</h5>
+                    <div class="column is-3" id="round-1">
+                        <img :src="'images/start-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="Starting phase" />
+                    </div>
+                    <div class="column is-3" id="round-2">
+                        <img v-if="meleePhase2" :src="'images/one/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 2" :src="'images/three/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 3" :src="'images/four/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+
+                    <div class="column is-3" id="round-3">
+                        <img v-if="meleePhase2" :src="'images/one/2-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
+                        <img v-else-if="rotation == 2" :src="'images/three/2-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="" />
+                        <img v-else-if="rotation == 3" :src="'images/four/2-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+
+                    <div class="column is-3" id="round-4">
+                        <img v-if="rotation == 2" :src="'images/three/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="" />
+                        <img v-else-if="rotation == 3" :src="'images/four/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="" />
+                        <img v-else-if="rotation == 4" :src="'images/one/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
+                        <img v-else-if="rotation == 5" :src="'images/two/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+                </div>
+
+
+
+                <!-- TODO: Add all other phase images here and else condition for placeholder images. -->
+                <!-- TODO: See commented code below. -->
+                <div class="columns is-mobile is-multiline">
+                    <h5 class="column is-12 title is-5">PHASES 5-8</h5>
+                    <div class="column is-3" id="round-5">
+                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+                    <div class="column is-3" id="round-6">
+                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+                    <div class="column is-3" id="round-7">
+                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+                    <div class="column is-3" id="round-8">
+                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+                </div>
+                <div class="columns is-mobile is-multiline">
+                    <h5 class="column is-12 title is-5">PHASES 9-12</h5>
+                    <div class="column is-3" id="round-9">
+                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+                    <div class="column is-3" id="round-10">
+                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+                    <div class="column is-3" id="round-11">
+                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+                    <div class="column is-3" id="round-12">
+                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <div class="sub-rotation" id="sub-rotation-1-part-1" v-if="rotation == 4">
                     <div class="columns is-mobile is-multiline rotations">
                         <div class="column is-4">
                             <img :src="'images/one/4-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="" />
@@ -174,7 +223,7 @@
                     </div>
                 </div>
 
-                <div class="sub-rotation" id="sub-rotation-1-part-2"  v-if="rotation == 1.2">
+                <div class="sub-rotation" id="sub-rotation-1-part-2"  v-if="rotation == 5">
                     <div class="columns is-mobile is-multiline rotations">
                         <div class="column is-4">
                             <img :src="'images/two/7-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="" />
@@ -262,7 +311,7 @@
                             <img :src="'images/four/11-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="" />
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="notification is-primary has-text-centered is-pointer" @click="selectRotation(0)">

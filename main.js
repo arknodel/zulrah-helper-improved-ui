@@ -1,15 +1,27 @@
+const PossibleRotations = {
+    NotSet: 0,
+    RangeStart: 2,
+    MageStart: 3,
+    MeleeStartPhase4South: 4,
+    MeleeStartPhase4East: 5,
+}
+
+
 new Vue({
     el: '#zulrah-helper',
     data: {
+        PossibleRotations: PossibleRotations,
         displaySettings: false,
-        rotation: 0,
+        rotation: PossibleRotations.NotSet,
+        meleePhase2: false,
         theme: "dark",
         style: "simple",
-        degrees: 0,
+        degrees: 0
     },
     methods: {
         selectRotation: function(rotation) {
             this.rotation = rotation;
+            this.meleePhase2 = (rotation == PossibleRotations.MeleeStartPhase4South || rotation == MeleeStartPhase4East);
         },
         toggleTheme: function () {
             if (this.theme == "light") {
