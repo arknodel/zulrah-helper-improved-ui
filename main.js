@@ -21,7 +21,7 @@ new Vue({
     methods: {
         selectRotation: function(rotation) {
             this.rotation = rotation;
-            this.meleePhase2 = (rotation == PossibleRotations.MeleeStartPhase4South || rotation == MeleeStartPhase4East);
+            this.meleePhase2 = (rotation == PossibleRotations.MeleeStartPhase4South || rotation == PossibleRotations.MeleeStartPhase4East);
         },
         toggleTheme: function () {
             if (this.theme == "light") {
