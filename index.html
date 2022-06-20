@@ -122,31 +122,63 @@
                 <div class="columns is-mobile is-multiline">
                     <h5 class="column is-12 title is-5">PHASES 5-8</h5>
                     <div class="column is-3" id="round-5">
-                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-if="rotation == 2" :src="'images/three/4-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 3" :src="'images/four/4-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 4" :src="'images/one/4-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 5" :src="'images/two/4-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
                     </div>
                     <div class="column is-3" id="round-6">
-                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-if="rotation == 2" :src="'images/three/5-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 3" :src="'images/four/5-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 4" :src="'images/one/5-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 5" :src="'images/two/5-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
                     </div>
                     <div class="column is-3" id="round-7">
-                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-if="rotation == 2" :src="'images/three/6-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 3" :src="'images/four/6-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 4" :src="'images/one/6-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 5" :src="'images/two/6-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
                     </div>
                     <div class="column is-3" id="round-8">
-                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-if="rotation == 2" :src="'images/three/7-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 3" :src="'images/four/7-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 4" :src="'images/one/7-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 5" :src="'images/two/7-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
                     </div>
                 </div>
                 <div class="columns is-mobile is-multiline">
                     <h5 class="column is-12 title is-5">PHASES 9-12</h5>
                     <div class="column is-3" id="round-9">
-                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-if="rotation == 2" :src="'images/three/8-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 3" :src="'images/four/8-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 4" :src="'images/one/8-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 5" :src="'images/two/8-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
                     </div>
                     <div class="column is-3" id="round-10">
-                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-if="rotation == 2" :src="'images/three/9-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 3" :src="'images/four/9-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 4" :src="'images/one/9-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 5" :src="'images/two/9-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
                     </div>
                     <div class="column is-3" id="round-11">
-                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-if="rotation == 2" :src="'images/three/10-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 3" :src="'images/four/10-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 4" :src="'images/one/10-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 5" :src="'images/two/10-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
                     </div>
                     <div class="column is-3" id="round-12">
-                        <img :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-if="rotation == 2" :src="'images/three/11-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 3" :src="'images/four/11-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 4" :src="'images/one/11-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else-if="rotation == 5" :src="'images/two/11-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
+                        <img v-else :src="'images/placeholder-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" />
                     </div>
                 </div>
 
