@@ -1,5 +1,6 @@
 const PossibleRotations = {
     NotSet: 0,
+    MeleeStart: 1,
     RangeStart: 2,
     MageStart: 3,
     MeleeStartPhase4South: 4,
@@ -21,7 +22,7 @@ new Vue({
     methods: {
         selectRotation: function(rotation) {
             this.rotation = rotation;
-            this.meleePhase2 = (rotation == PossibleRotations.MeleeStartPhase4South || rotation == PossibleRotations.MeleeStartPhase4East);
+            this.meleePhase2 = (rotation == PossibleRotations.MeleeStart || rotation == PossibleRotations.MeleeStartPhase4South || rotation == PossibleRotations.MeleeStartPhase4East);
         },
         toggleTheme: function () {
             if (this.theme == "light") {

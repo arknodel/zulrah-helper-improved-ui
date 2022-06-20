@@ -86,40 +86,7 @@
                     </div>
                 </div>
 
-
-                
-                <div class="columns is-mobile is-multiline rotations">
-                    <div class="columns is-mobile is-multiline rotations">
-                        <h5 class="column is-12 title is-5">PHASE 2 OPTIONS</h5>
-                        <div class="column is-4 previous-rotation" id="select-rotation-1">
-                            <img :src="'images/one/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image" alt="Rotation 1 + 2 option" />
-                        </div>
-                        <div class="column is-4" id="select-rotation-2" @click="selectRotation(PossibleRotations.RangeStart)">
-                            <img :src="'images/three/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 3 option" />
-                        </div>
-                        <div class="column is-4" id="select-rotation-3" @click="selectRotation(PossibleRotations.MageStart)">
-                            <img :src="'images/four/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 4 option" />
-                        </div>
-                    </div>
-                </div>
-
-                <br/>
-
-                <div class="columns is-mobile is-multiline rotations">
-                    <div class="columns is-mobile is-multiline rotations">
-                        <h5 class="column is-12 title is-5">PHASE 4 OPTIONS (Phase 2 is Melee)</h5>
-                        <div class="column is-4" id="select-rotation-1-path-1" @click="selectRotation(PossibleRotations.MeleeStartPhase4South)">
-                            <img :src="'images/one/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
-                        </div>
-                        <div class="column is-4" id="select-rotation-1-path-2" @click="selectRotation(PossibleRotations.MeleeStartPhase4East)">
-                            <img :src="'images/two/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
-                        </div>
-                    </div>
-                </div>
-
-                <br />
-                <hr />
-
+                <h2 class="title is-2">ACTIVE ROTATION</h1>
                 <div class="columns is-mobile is-multiline">
                     <h5 class="column is-12 title is-5">PHASES 1-4</h5>
                     <div class="column is-3" id="round-1">
@@ -183,9 +150,37 @@
                     </div>
                 </div>
 
+                <hr />
+                <h2 class="title is-2">OPTIONS</h1>
+                
+                <div class="columns is-mobile is-multiline rotations">
+                    <div class="columns is-mobile is-multiline rotations">
+                        <h5 class="column is-12 title is-5">PHASE 2 OPTIONS</h5>
+                        <div class="column is-4" id="select-rotation-1" @click="selectRotation(PossibleRotations.MeleeStart)">
+                            <img :src="'images/one/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 1 + 2 option" />
+                        </div>
+                        <div class="column is-4" id="select-rotation-2" @click="selectRotation(PossibleRotations.RangeStart)">
+                            <img :src="'images/three/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 3 option" />
+                        </div>
+                        <div class="column is-4" id="select-rotation-3" @click="selectRotation(PossibleRotations.MageStart)">
+                            <img :src="'images/four/1-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="Rotation 4 option" />
+                        </div>
+                    </div>
+                </div>
 
+                <br/>
 
-
+                <div class="columns is-mobile is-multiline rotations">
+                    <div class="columns is-mobile is-multiline rotations">
+                        <h5 class="column is-12 title is-5">PHASE 4 OPTIONS (If Melee Phase 2)</h5>
+                        <div class="column is-4" id="select-rotation-1-path-1" @click="selectRotation(PossibleRotations.MeleeStartPhase4South)">
+                            <img :src="'images/one/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
+                        </div>
+                        <div class="column is-4" id="select-rotation-1-path-2" @click="selectRotation(PossibleRotations.MeleeStartPhase4East)">
+                            <img :src="'images/two/3-' + style + '.png'" :style="'transform: rotate(' + degrees + 'deg);'" class="phase-image is-option" alt="" />
+                        </div>
+                    </div>
+                </div>
 
 
 
